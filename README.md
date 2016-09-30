@@ -2,10 +2,13 @@
 小米论坛爬虫
 
 ### 软件前提
->需要安装python环境
->pip install scrapy(python版本爬虫)
->pip install MySQL-python(python版本mysql驱动)
->mysql数据库
+```
+需要安装python环境
+pip install scrapy(python版本爬虫)
+pip install MySQL-python(python版本mysql驱动)
+mysql数据库
+```
+
 
 ###数据库表结构设计
 
