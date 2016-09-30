@@ -1,13 +1,16 @@
 # xiaomi_forum_spider
 小米论坛爬虫
 
-
-
+### 软件前提
+>需要安装python环境
+>pip install scrapy(python版本爬虫)
+>pip install MySQL-python(python版本mysql驱动)
+>mysql数据库
 
 ###数据库表结构设计
 
 ####小米论坛板块表forum
-```
+```sql
 CREATE TABLE `forum` (
   `forum_plates_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '小米论坛板块主键',
   `forum_plates_name` varchar(40) NOT NULL COMMENT '小米论坛板块名称',
@@ -22,7 +25,7 @@ CREATE TABLE `forum` (
 
 
 ####小米论坛主题表forum_theme
-```
+```sql
 CREATE TABLE `forum_theme` (
   `theme_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主题id',
   `theme_number` int(32) NOT NULL COMMENT '主题编号，理论上不相同',
@@ -42,7 +45,7 @@ CREATE TABLE `forum_theme` (
 
 
 ####小米论坛主题评论表forum_theme_comment
-```
+```sql
 CREATE TABLE `forum_theme_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `theme_number` int(32) NOT NULL COMMENT '主题编号',
@@ -54,12 +57,12 @@ CREATE TABLE `forum_theme_comment` (
   `comment_device_type` varchar(256) DEFAULT NULL COMMENT '评论设备来源',
   `comment_floor` int(11) DEFAULT NULL COMMENT '评论楼层',
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113776 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 
 
 ####小米论坛用户表user
-```
+```sql
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_miid` int(11) NOT NULL,
@@ -79,5 +82,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
+
+###程序启动
+```xml
+git clone https://github.com/CodeToSurvive1/xiaomi_forum_spider.git
+cd xiaomi_forum_spider
+scrapy crawl xiaomi-theme
+```
+
+
 
 
